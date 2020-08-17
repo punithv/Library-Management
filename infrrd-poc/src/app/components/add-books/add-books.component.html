@@ -1,0 +1,29 @@
+<h1>ADD BOOKS</h1>
+<form >
+
+<div class="row">
+<div class="col-lg-6">
+  <label for="book_id">BOOK ID</label>
+  <input type="text" class="form-control" id="book_id" placeholder="BOOK ID"  
+  [(ngModel)]="newBooks.book_id" [ngModelOptions]="{standalone: true}" >
+
+</div>
+</div>
+<div class="row">
+<div class="col-lg-6">
+  <label for="book_name">Book Name</label>
+  <input type="text" class="form-control" id="bookname" placeholder="BOOK NAME" 
+  [(ngModel)]="newBooks.book_name" [ngModelOptions]="{standalone: true}" >
+</div>
+</div>
+
+<div class="row">
+<div class="col-lg-6">
+  <label for="image_Url">BOOK Image</label>
+  <input type="text" class="form-control" id="imageurl" placeholder="IMAGE URL"  [(ngModel)]="newBooks.image_Url" [ngModelOptions]="{standalone: true}">
+  </div>
+  </div>
+
+   <br>
+  <button type="button" class="btn btn-success" (click)="addBooks()" >Save</button>
+</form>

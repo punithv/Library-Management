@@ -1,0 +1,45 @@
+
+<div class="books-container mat-elevation-z8">
+  <mat-table #table [dataSource]="dataSource">       
+    <ng-container matColumnDef="book_id">
+      <mat-header-cell *matHeaderCellDef> ID </mat-header-cell>
+      <mat-cell *matCellDef="let book">{{ book.book_id }}</mat-cell>
+    </ng-container>
+          
+    <ng-container matColumnDef="book_name">
+      <mat-header-cell *matHeaderCellDef>Book Name</mat-header-cell>
+      <mat-cell *matCellDef="let book">
+        {{ book.book_name }}
+      </mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="image_Url">
+        <mat-header-cell *matHeaderCellDef> Cover </mat-header-cell>
+        <mat-cell *matCellDef="let book">
+          <img class="image" src="{{ book.image_Url }} " />
+        </mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="issued">
+        <mat-header-cell *matHeaderCellDef> Issued </mat-header-cell>
+        <mat-cell *matCellDef="let book">
+          <button *ngIf="!book.issued" mat-raised-button color="primary" 
+          (click)="issue(book)">Issue</button>
+        </mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="Available">
+        <mat-header-cell *matHeaderCellDef>Availability </mat-header-cell>
+        <mat-cell *matCellDef="let book">
+          <button *ngIf="!book.issued" mat-raised-button color="green" 
+          >Available</button>
+        </mat-cell>
+      </ng-container>
+
+  
+      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+    </mat-table>
+  </div>      
+            
+             
+          
+
+      
